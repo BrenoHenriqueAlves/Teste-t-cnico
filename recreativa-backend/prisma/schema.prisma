@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+
+
+model LessonPlan {
+  id               String   @id @default(cuid())
+  title            String // "Título da Atividade"
+  yearGrade        String?  // "Ano/Série" - Novo
+  teacherName      String?  // "Professor(a)" - Novo
+  knowledgeArea    String?  // "Área do Conhecimento" - Novo
+  summary          String?  // "Resumo da Atividade" - Novo
+  objectives       String
+  skills           String?  // "Habilidades Trabalhadas" - Novo
+  estimatedTime    String?  // "Tempo Estimado" - Novo
+  resources        String?  // "Recursos Necessários" (era 'materials')
+  stepByStep       String?  // "Passo a Passo da Atividade" - Novo
+  originalFilePath String
+  originalFileMimeType String?
+  generatedPdfPath String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
