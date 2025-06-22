@@ -15,3 +15,11 @@ yarn-error.log
 
 .env
 .env.test
+
+# Conteúdo das pastas de Upload - IGNORAR TUDO DENTRO DELAS
+/uploads/originals/*
+/uploads/generated/*
+
+# Mas NÃO ignore os arquivos .gitkeep (isso garante que as pastas sejam criadas)
+!/uploads/originals/.gitkeep
+!/uploads/generated/.gitkeep
