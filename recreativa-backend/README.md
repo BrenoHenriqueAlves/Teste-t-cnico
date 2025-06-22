@@ -39,12 +39,15 @@ GEMINI_API_KEY=AIzaSyAt9TGAtvvRZJTQivkb3JZWXKk6ZHLQOc8
 
 ### 3. Crie As Pastas para Upload
 
-# No Linux/macOS
+#### No Linux/macOS
+```bash
 mkdir -p uploads/originals uploads/generated
+```
 
-# No Windows (PowerShell)
+#### No Windows (PowerShell)
+```bash
 New-Item -Path "uploads/originals", "uploads/generated" -ItemType Directory -Force
-
+```
 
 ### 4. Prepare o Banco de Dados
 Este comando irá ler seu `schema.prisma` e criar o arquivo do banco de dados SQLite.
